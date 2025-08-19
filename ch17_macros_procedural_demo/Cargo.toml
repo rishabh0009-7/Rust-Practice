@@ -1,0 +1,7 @@
+[package]
+name = "ch17_macros_procedural_demo"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ch17_macros_procedural = { path = "../ch17_macros_procedural" }
