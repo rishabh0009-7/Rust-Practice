@@ -96,19 +96,67 @@
 // You can have multiple lifetime parameters if references are unrelated.
 
 
-fn mix <'a,'b>( x:&'a str , y :&'b str) -> (&'a str , &'b str) {
-    (x,y)
+// fn mix <'a,'b>( x:&'a str , y :&'b str) -> (&'a str , &'b str) {
+//     (x,y)
 
+
+// }
+// fn main (){
+//     let s1 = String::from ("hello ");
+//     let s2 = String::from ("world");
+
+//     let (a, b )= mix(&s1 , &s2) ;
+//     println!( "a = {} , b= {}" , a,b);
+
+
+// }
+
+
+
+// Lifetimes in Methods
+
+// When implementing methods, annotate lifetimes consistently.
+
+
+// struct Sentence <'a>{
+//     text:&'a str,
+
+// }
+
+// impl <'a> Sentence <'a>{
+//     fn get_text(&self) -> &'a str {
+//         self.text
+
+//     }
+
+// }
+
+
+// fn main(){
+//     let text = String::from("hello");
+//     let s = Sentence{text:&text} ;
+//     println!("{}" , s.get_text());
+
+// }
+
+
+
+// Static Lifetime
+
+// 'static means a reference lives for the entire duration of the program.
+
+fn static_str () -> &'static str {
+    "i live forever "
 
 }
-fn main (){
-    let s1 = String::from ("hello ");
-    let s2 = String::from ("world");
 
-    let (a, b )= mix(&s1 , &s2) ;
-    println!( "a = {} , b= {}" , a,b);
-
-
+fn main(){
+    let s = static_str();
+    println!("{}" , s)
 }
+
+
+
+
 
 
